@@ -1,0 +1,33 @@
+<%- include header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="add">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="name" required></td>
+                 </tr>                 
+				<tr>
+                    <td class="label" valign="top">StatusCode</td><td valign="top">: <select name="statuscode"><option value="200">200</option><option value="403">403</option><option value="404">404</option> </select> *Ive only listed most common codes to demostrate the concept</td>
+                </tr>
+				<tr>
+                    <td class="label" valign="top">Data Type</td><td valign="top">: <select name="datatype"><option value="JSON">JSON</option><option value="XML">XML</option><option value="html">html</option> </select></td>
+                </tr>
+                <tr>
+                    <td class="label" valign="top">URL Ext</td><td valign="top">: <input type="text" name="urlext" required> *Always start with a forward slash (/) eg: "/doLogin" will result in localhost:2001/doLogin</td>
+                </tr>
+				  <tr>
+                    <td class="label" valign="top">Response</td><td valign="top">: <textarea name="reqres" cols="30" rows="10"></textarea></td>
+                </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                       <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+<%- include footer.ejs %>

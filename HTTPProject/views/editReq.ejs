@@ -1,0 +1,36 @@
+<%- include header.ejs %>
+        <div class="page-data">            
+            <form method="post" action="/edit/<%=data[0]._id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="name" value="<%=data[0].name%>" disabled></td>
+                 </tr>
+				   <tr>
+                    <td class="label">Status Code</td><td>: <select name="statuscode"><option value="<%=data[0].statuscode%>"><%=data[0].statuscode%></option><option value="200">200</option><option value="403">403</option><option value="404">404</option> required></td>
+                 </tr>
+				 <tr>
+                    <td class="label">Data Type</td><td valign="top">: <select name="datatype"><option value="<%=data[0].datatype%>"><%=data[0].datatype%></option><option value="JSON">JSON</option><option value="XML">XML</option><option value="HTML">HTML</option></td>
+                </tr>
+				 <tr>
+                    <td class="label">URL Ext</td><td>: <input type="text" name="urlext" value="<%=data[0].urlext%>" disabled>*Always start with a forward slash (/) eg: "/doLogin" will result in localhost:2001/doLogin</td>
+                 </tr>
+                 <tr>
+                    <td class="label" valign="top">Response</td>
+                    <td valign="top">: 
+                        <textarea name="reqres" required cols="30" rows="10"><%=data[0].reqres%></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+<%- include footer.ejs %>

@@ -1,0 +1,14 @@
+Pre-REquirements
+Fresh server/pc Win 7 x64 or later
+No existing install of MongoDB
+-Install NodeJS - refer to Documentation\ Node install doc
+-Install MongoDB - refer to Documentaton\ MogoDB install doc
+-Default MongoDB runs on port 27017 - ensure this port is not in use
+
+To start the server system using windows 7 or later, run "MasterStart.bat", this will start the mongodb engine and 5 seconds later, it will start nodejs server script.
+This systm masterstart process was created for windows 7 or later only wihtout any UAC (run with admin priv).
+On first start, the database will be empty - you can create new records to start using the system, please follow the Documentation\ functional test plan on how to use the system.
+
+To Close the system, exit the CMD windows for MongoDB and NodeJS
+
+TO Restart the system, after closing the system, open "MasterStart.bat"

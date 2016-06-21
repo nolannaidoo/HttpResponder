@@ -1,0 +1,33 @@
+<%- include header.ejs %>
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addHTTPRequest();">Add New Request Response</button> To access the HTTP request URL, ""ServerIP:port/urlext", eg:An URLExt of value "/doLogin" will be accessed via "localhost:2001/doLogin". **URL Ext is case sensitive**
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>                    
+                    <th>Name</th>					
+                    <th>StatusCode</th>
+					<th>Type</th>
+                    <th>URL Ext</th>
+                    <th>Response</th>
+                    <th width="125px">Modify</th>
+                </tr>                               
+                <% if(data.length){                                 
+                 for(var i = 0;i < data.length;i++) { %>                 
+                <tr>                    
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].statuscode%></td>
+					<td><%=data[i].datatype%></td>
+                    <td><%=data[i].urlext%></td>
+                    <td><%=data[i].reqres%></td>
+                    <td>
+                        <a class="a-inside edit" href="/edit/<%=data[i]._id%>">Edit</a>                       
+                        <a class="a-inside delete" href="/delete/<%=data[i]._id%>" onclick="return confirm('This will delete the selected item, are you sure?')">Delete</a>                       
+                    </td>
+                </tr>
+            <% }} %>
+            </table>
+         </div>
+        </div>
+<%- include footer.ejs %>
